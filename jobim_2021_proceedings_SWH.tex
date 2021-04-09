@@ -1,0 +1,136 @@
+\documentclass[long, final]{jobim}
+% Available options are:
+% - showframe
+% - draft
+% - final [default]
+
+\usepackage[utf8]{inputenc}
+
+% WARNING: already loaded packages:
+% - hyperref
+% - times
+% - color
+% - xspace
+% - graphicx
+% - fancyhdr
+% - fancybox
+% - indentfirst
+% - geometry
+% - babel (options english,francais) :
+%   choose the language with \selectlanguage{<language>}
+
+
+\pagestyle{empty}
+\addtolength{\parskip}{0.4\baselineskip}
+
+%% Title of the paper (required)
+\title{Reproducibility in bioinformatics: take care of your code with Software Heritage}
+
+%% List of authors (separated by the macro \and).
+%% Authors can be followed by \inst{<n>} macro.
+%% The <n> parameter of the \inst macro should correspond to the <n>th institution
+%% (see macro \institute below).
+\author{Pierre \textsc{Poulain}\inst{1} \and Morane \textsc{Gruenpeter}\inst{2} \and Roberto \textsc{Di Cosmo}\inst{3}}
+
+%% List of institutions (separated by the macro \and).
+\institute{
+ Université de Paris, CNRS, Institut Jacques Monod, F-75006, Paris, France
+ \and
+ Software Heritage, Inria, France
+ \and
+ Software Heritage, Inria and University of Paris, France
+}
+
+% email of the corresponding author
+\corresponding{pierre.poulain@u-paris.fr}
+
+
+%% Abstract of the paper (required).
+\abstract{%
+Reproducibility is an ongoing effort in the bioinformatics community. Open science helps toward this goal with open access to the scientific literature, open data and open source software. More than 36\% of yearly published papers are now published under open access conditions. Raw data deposit in public international repositories of genomics and proteomics data is now well established and also enforced by most journal editorial policies. However less attention is paid to scientific software. A common approach is to deposit code in development platforms such as GitHub or Gitlab but no long-term sustainability is guaranteed. The Software Heritage project aims at the long-term archiving of source codes. It’s an international project started in 2016 and whose mission is to archive and preserve all software source code, to make them findable and accessible to anyone and to enable analysis of software source code. The unique persistent identifier SWHID attached to all objects in Software Heritage guarantees to easily retrieve a given version of the source code at all times. Accessing the archived source code is one step toward reproducing experiments that were based on the software.
+}
+
+%% List of keywords of the paper (required).
+\keywords{reproducibility, open science, open source software, Software Heritage, SWHID}
+
+\begin{document}
+
+ % Si vous écrivez en français, commentez la ligne suivante
+\selectlanguage{english}
+ % Si vous écrivez en francais, décommentez la ligne suivante...
+ % \selectlanguage{francais}
+
+   \maketitle
+
+ \section{Houston we have a problem with reproducibility!}
+ \label{sec:introduction}
+
+In 2016, a Nature survey of 1,576 researchers \cite{baker2016b} showed that 70\% of them failed to reproduce other scientist’s experiments and more than half of them even failed to reproduce their own expériments. 90\% of those surveyed acknowledged a reproducibility crisis. Before that \cite{donoho2010,peng2011,markowetz2015} and even more since then, many recommendations and good practices have been published in many fields of science and also in bioinformatics and computational science \cite{barba2016,gruning2018,kim2018,barba2019}. 
+
+\section{Enhance your reproducibility with open science}
+\label{sec:enhance}
+
+Of the many tips and guidelines offered by the literature, open science is probably the most popular. Open science relies on 3 pillars: open access publications, open data and open source software.
+
+Open access publications are now well established and adopted by many if not all publishers. For instance, more than 36\% of all publications published in 2018 were open access publications (European Commission 2018). In biology and bioinformatics, the recent development of preprints has also acted as a leverage towards open access.
+
+Open data is also a growing trend, from the seminal Protein Data Bank (PDB) in structural biology to data repositories dedicated to high volume omics data, such as GEO, SRA or ENA for genomics data and PRIDE for proteomics data. Availability of all-purpose data repositories (Zenodo, Figshare) also fostered this trend. One issue being now the question to manage, preserve, analyse and integrate all these data.
+
+Last, but not least, awareness has been raising about the importance of open source software as the third pillar of open science. This endeavor toward openness ranges from the distribution of software and libraries through centralised repositories such as Bioconda \cite{gruning2018a}, Pypi or Bioconductor, to the availability of source code in collaborative development platforms like GitHub or Gitlab. Adoption of open source software principles in computational biology and scientific computing popularized the use for version control systems (git, svn\ldots) among many other guidelines \cite{wilson2014,taschuk2017,jimenez2017}. The bioinformatics community gradually shifted from the “in-house code” or “code available upon request” paradigms to the “source code is in this GitHub repo” practise, albeit there is still a lot of work to be done\cite{cadwallader2021}.
+
+
+\subsection{Let’s speak about archiving}
+\label{sec:archiving}
+
+Reproducibility implies being able to reproduce tomorrow, in a few months, or in a few years an analysis originally performed today.  For this, we need to think beyond the simple storage of data, publications and software and tackle the issue of the long term archiving of data, publications and software. 
+
+Albeit scientific data and publications are usually housed by organizations (NCBI, EBI, CERN…) sponsored by public funding, software source code is mostly hosted on platforms run by private companies (GitHub, GitLab, Bitbucket, ... ). No guarantee is given on the short-term availability and long-term storage of source codes hosted in such platforms, as recalled by the turmoil caused by the closure of the Google Code platform in 2015, the acquisition of GitHub by Microsoft in 2017, and the removal of 250.000 Mercurial repositories from Bitbucket in the summer of 2020.
+
+
+
+\section{The Software Heritage Project}
+\label{sec:SWH}
+
+The Software Heritage project\cite{dicosmo2017} aims at the long-term archiving of source codes, from the source code that ran on 
+the Apollo 11 Guidance Computer\footnote{\url{https://archive.softwareheritage.org/swh:1:cnt:64582b78792cd6c2d67d35da5a11bb80886a6409;origin=https://github.com/virtualagc/virtualagc;lines=245-261/}} 
+to the source code of the first person shooter game Quake III\footnote{\url{https://archive.softwareheritage.org/swh:1:cnt:bb0faf6919fc60636b2696f32ec9b3c2adb247fe;origin=https://github.com/id-Software/Quake-III-Arena;lines=549-572/ }}, 
+without forgetting the molecular dynamics engine Gromacs\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:0c6cd4bba1c44525476995fe17e23ac6a97f476b;origin=https://github.com/gromacs/gromacs;visit=swh:1:snp:8ec7ea9117f3e86aafb5e881756532d38defa878;anchor=swh:1:rev:c4eb0fc0251ac864f9756cba9f37154de2818d1d/ }}, 
+the genomics read aligner Bowtie 2\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:40d86133768b315d1de83afb44d62abe09e1dd32;origin=https://github.com/BenLangmead/bowtie2;visit=swh:1:snp:c25778cfefc086c63c6f78eed230d0b9c88876ee;anchor=swh:1:rev:762a96ef82fb2e28f2f9805174e83fb2670e3d54/ }}, 
+the Cytoscape\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:1aa2b40ebfe9b255e8eef0bafd903dec8592a33d;origin=https://github.com/cytoscape/cytoscape;visit=swh:1:snp:61b72b6af96f434012c2badc93bbf6dd6b60aba3;anchor=swh:1:rev:314e0778e317bed475f71befe11918cd5c0f1676/ }} network visualisation software... 
+Software Heritage also archives automatically the entire content of PyPI, CRAN, and there is now funding available to help communities develop connectors with other software repositories, like Bioconductor and Bioconda.
+
+Software Heritage was launched in 2016 by Inria and is now supported by Unesco, the CNRS, Microsoft, Huawei, Intel... Software Heritage is a nonprofit organization, and runs on funding provided by sponsors and members. Software Heritage regularly collects source code from a growing list of code hosting platforms, and provides a “Save code now” functionality that allows to trigger archival for any public repository based on the Git, Mercurial or Subversion version control systems, free of charge. The whole history of development is retained allowing the archiving of the software but also the ability to retrieve a specific version of it. As of March 2021, Software Heritage has archived more than 9.8 billions unique source files from more than 150 million software, for a total volume of data of 700 Tb (uncompressed).
+
+Any object archived in Software Heritage is assigned a persistent identifier called the SWHID. The SWHID is an intrinsic identifier, much more robust than the common DOI that needs a third-party resolver. The SWHID is independently verifiable and cryptographically strong, therefore it is guaranteed to remain stable (persistent) over time.
+
+Source code deposit in Software Heritage can be manually triggered in a 2 step process or can be performed through the HAL portal\cite{barborini2018}. In 2020, Software Heritage teamed up with the open-access journal eLife to archive all software published in its articles\footnote{\url{https://elifesciences.org/inside-elife/c5428dc9/elife-latest-our-commitment-to-software-preservation-and-reuse }}, and released the biblatex-software package\footnote{\url{https://ctan.org/pkg/biblatex-software }} that allows to properly cite software in research articles written using LaTeX, even down to the line of code\cite{dicosmo2020}.
+
+As demonstrated in the EOSC report on Scholarly Infrastructures for Research Software (SIRS)\cite{SIRSReport2020}, Software Heritage provides the necessary infrastructure for archiving and referencing all the source code, by building an universal archive with the SWHID persistent intrinsic identifiers for over 20 billion artefacts. The scholarly ecosystem, that involves institutional repositories, publishers and aggregators, needs to build upon Software Heritage, by providing qualified descriptions stored in proper metadata and credit to the authors of the software. This will fulfil the key needs that the EOSC Task force has identified as the equivalent of FAIR for research software: archive, reference, description and credit (ARDC). 
+
+\section{What can bioinformaticians do?}
+
+To this end, developers and scientists should add context to their source code by providing metadata. Precisely, we encourage authors to add metadata files in the code repository, which will ensure the metadata is preserved with the source code. The proposed metadata files are the following: an AUTHOR(s) file with the list of authors, a LICENSE file with the applicable licenses to the source code, a README\footnote{Eric Raymond's famous HOWTO encouraging the usage of a README file for the software release\\ 
+\url{ https://tldp.org/HOWTO/Software-Release-Practice-HOWTO/distpractice.html\#readme}} file with the description of the software and other valuable information and a codemeta.json file where structured metadata can be captured in a machine readable format. There are existing tools to help researchers create metadata files, for example the codemeta-generator\footnote{The codemeta-generator \url{ https://archive.softwareheritage.org/swh:1:dir:7aa4af5b92ce1be7a2286bfd353ef15530a0d431;origin=https://github.com/codemeta/codemeta-generator;visit=swh:1:snp:7a9976afd1102ece38f1f7626eeb95abd400eb67;anchor=swh:1:rev:73eac8968f102ce21bd2f593e0117af95cf2f0d0/}} following the CodeMeta\footnote{\url{https://codemeta.github.io/}} community standard. 
+
+With a code repository url, anyone can trigger a save request to the Software Heritage archive, which triggers the quick archival of the repository and guarantees the preservation of all the files in the repository and all development history. The additional available metadata files and documentation are preserved within the source code. They are crucial for reproducibility, considering that identifying and accessing the source code isn’t enough to recompile, re-run or re-use the software, let alone reproduce the entire experiment. When the metadata and documentation are archived within the source code, it is more likely to find any information which can make the reproducibility of software easier.
+
+
+\section{Conclusion}
+
+Software Heritage is an international project to archive source code of all software. The bioinformatics community has a long tradition of scientific software development. As other fields in science, bioinformatics tackles the issue of reproducibility with the help of open science. Open access publications and open data are key in this effort. Yet without open source software and the long-term preservation of source code proposed by Software Heritage many computational biology experiments that are described in research articles can’t be reproduced. Consequently, we should call for the archival of software source code created in the bioinformatics community and encourage researchers to improve practices of capturing metadata and documenting their source code to ensure its preservation for long-term reproducibility.
+
+\section{Warning}
+Note that the maximum length of \emph{Proceeding} submission must not exceed \textcolor{red}{\emph{\JobimLongPaperMaxPages{} pages}. A paper disregarding the
+format described in this document will be rejected (even if it was previously accepted
+by the program committee).}
+
+\begin{acknowledgements}
+  \label{sec:acknowledgements}
+
+  Acknowledgements are possible at the end of the document just before the References list. It should be in Times New Roman 10-point font.
+\end{acknowledgements}
+
+
+\bibliography{jobim_2021_proceedings_SWH}
+
+\end{document}
