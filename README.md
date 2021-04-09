@@ -6,6 +6,3 @@ Proposition of oral communication for JOBIM 2021 conference:
 
 - [conférence web site](https://jobim2021.sciencesconf.org/)
 - [call for communication](https://jobim2021.sciencesconf.org/resource/page/id/5) / deadline 11/04/2021
-
-
-
