@@ -27,7 +27,7 @@
   backend=biber,
   bibencoding=utf8,
   giveninits=true,
-  url=false,
+  url=true,
   doi=false,
   defernumbers,
   maxcitenames=10,
@@ -45,7 +45,7 @@
   swhid=true,
   swlabels=true,
   vcs=true,
-  license=false}
+  license=true}
 
 \addbibresource{jobim_2021_proceedings_SWH.bib}
 \addbibresource{software.bib}
@@ -141,7 +141,7 @@ As demonstrated in the EOSC report on Scholarly Infrastructures for Research Sof
 \section{What can bioinformaticians do?}
 
 To this end, developers and scientists should add context to their source code by providing metadata. Precisely, we encourage authors to add metadata files in the code repository, which will ensure the metadata is preserved with the source code. The proposed metadata files are the following: an AUTHOR(s) file with the list of authors, a LICENSE file with the applicable licenses to the source code, a README\footnote{Eric Raymond's famous HOWTO encouraging the usage of a README file for the software release\\ 
-\url{ https://tldp.org/HOWTO/Software-Release-Practice-HOWTO/distpractice.html\#readme}} file with the description of the software and other valuable information and a codemeta.json file where structured metadata can be captured in a machine readable format. There are existing tools to help researchers create metadata files, for example the codemeta-generator\footnote{The codemeta-generator \url{ https://archive.softwareheritage.org/swh:1:dir:7aa4af5b92ce1be7a2286bfd353ef15530a0d431;origin=https://github.com/codemeta/codemeta-generator;visit=swh:1:snp:7a9976afd1102ece38f1f7626eeb95abd400eb67;anchor=swh:1:rev:73eac8968f102ce21bd2f593e0117af95cf2f0d0/}} following the CodeMeta\footnote{\url{https://codemeta.github.io/}} community standard. 
+\url{ https://tldp.org/HOWTO/Software-Release-Practice-HOWTO/distpractice.html\#readme}} file with the description of the software and other valuable information and a codemeta.json file where structured metadata can be captured in a machine readable format. There are existing tools to help researchers create metadata files, for example the \texttt{codemeta-generator}\cite{codemetagenerator} following the CodeMeta\footnote{\url{https://codemeta.github.io/}} community standard. 
 
 With a code repository url, anyone can trigger a save request to the Software Heritage archive, which triggers the quick archival of the repository and guarantees the preservation of all the files in the repository and all development history. The additional available metadata files and documentation are preserved within the source code. They are crucial for reproducibility, considering that identifying and accessing the source code isn’t enough to recompile, re-run or re-use the software, let alone reproduce the entire experiment. When the metadata and documentation are archived within the source code, it is more likely to find any information which can make the reproducibility of software easier.
 
