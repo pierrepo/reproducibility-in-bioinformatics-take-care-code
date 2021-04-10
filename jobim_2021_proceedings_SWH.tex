@@ -18,6 +18,37 @@
 % - geometry
 % - babel (options english,francais) :
 %   choose the language with \selectlanguage{<language>}
+\usepackage[
+  style=numeric,
+  datamodel=software, % extend the datamodel with entries for software
+  abbreviate=false,
+  natbib=true,
+  sorting=ydnt,
+  backend=biber,
+  bibencoding=utf8,
+  giveninits=true,
+  url=false,
+  doi=false,
+  defernumbers,
+  maxcitenames=10,
+  defernumbers=true,
+  maxbibnames=100]{biblatex}
+%
+% load the software biblatex style
+%
+\usepackage{software-biblatex}
+%
+% set software specific bibliography options
+%
+\ExecuteBibliographyOptions{
+  halid=true,
+  swhid=true,
+  swlabels=true,
+  vcs=true,
+  license=false}
+
+\addbibresource{jobim_2021_proceedings_SWH.bib}
+\addbibresource{software.bib}
 
 
 \pagestyle{empty}
@@ -92,18 +123,18 @@ Albeit scientific data and publications are usually housed by organizations (NCB
 \label{sec:SWH}
 
 The Software Heritage project\cite{dicosmo2017} aims at the long-term archiving of source codes, from the source code that ran on 
-the Apollo 11 Guidance Computer\footnote{\url{https://archive.softwareheritage.org/swh:1:cnt:64582b78792cd6c2d67d35da5a11bb80886a6409;origin=https://github.com/virtualagc/virtualagc;lines=245-261/}} 
-to the source code of the first person shooter game Quake III\footnote{\url{https://archive.softwareheritage.org/swh:1:cnt:bb0faf6919fc60636b2696f32ec9b3c2adb247fe;origin=https://github.com/id-Software/Quake-III-Arena;lines=549-572/ }}, 
-without forgetting the molecular dynamics engine Gromacs\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:0c6cd4bba1c44525476995fe17e23ac6a97f476b;origin=https://github.com/gromacs/gromacs;visit=swh:1:snp:8ec7ea9117f3e86aafb5e881756532d38defa878;anchor=swh:1:rev:c4eb0fc0251ac864f9756cba9f37154de2818d1d/ }}, 
-the genomics read aligner Bowtie 2\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:40d86133768b315d1de83afb44d62abe09e1dd32;origin=https://github.com/BenLangmead/bowtie2;visit=swh:1:snp:c25778cfefc086c63c6f78eed230d0b9c88876ee;anchor=swh:1:rev:762a96ef82fb2e28f2f9805174e83fb2670e3d54/ }}, 
-the Cytoscape\footnote{\url{https://archive.softwareheritage.org/swh:1:dir:1aa2b40ebfe9b255e8eef0bafd903dec8592a33d;origin=https://github.com/cytoscape/cytoscape;visit=swh:1:snp:61b72b6af96f434012c2badc93bbf6dd6b60aba3;anchor=swh:1:rev:314e0778e317bed475f71befe11918cd5c0f1676/ }} network visualisation software... 
+the Apollo 11 Guidance Computer\cite{Apollo11AGCsourcecode,TurnLEMaround}
+to the source code of the first person shooter game Quake III\cite{QuakeIIIArena,rsqrt}, 
+without forgetting the molecular dynamics engine Gromacs\cite{Gromacs,Gromacsv2021.1}, 
+the genomics read aligner Bowtie 2\cite{Bowtie2,Bowtie2v242}, 
+the Cytoscape\cite{Cytoscape} network visualisation software... 
 Software Heritage also archives automatically the entire content of PyPI, CRAN, and there is now funding available to help communities develop connectors with other software repositories, like Bioconductor and Bioconda.
 
 Software Heritage was launched in 2016 by Inria and is now supported by Unesco, the CNRS, Microsoft, Huawei, Intel... Software Heritage is a nonprofit organization, and runs on funding provided by sponsors and members. Software Heritage regularly collects source code from a growing list of code hosting platforms, and provides a “Save code now” functionality that allows to trigger archival for any public repository based on the Git, Mercurial or Subversion version control systems, free of charge. The whole history of development is retained allowing the archiving of the software but also the ability to retrieve a specific version of it. As of March 2021, Software Heritage has archived more than 9.8 billions unique source files from more than 150 million software, for a total volume of data of 700 Tb (uncompressed).
 
-Any object archived in Software Heritage is assigned a persistent identifier called the SWHID. The SWHID is an intrinsic identifier, much more robust than the common DOI that needs a third-party resolver. The SWHID is independently verifiable and cryptographically strong, therefore it is guaranteed to remain stable (persistent) over time.
+Any object archived in Software Heritage is assigned a persistent identifier called the SWHID\cite{dicosmo2020}. The SWHID is an intrinsic identifier, much more robust than the common DOI that needs a third-party resolver. The SWHID is independently verifiable and cryptographically strong, therefore it is guaranteed to remain stable (persistent) over time.
 
-Source code deposit in Software Heritage can be manually triggered in a 2 step process or can be performed through the HAL portal\cite{barborini2018}. In 2020, Software Heritage teamed up with the open-access journal eLife to archive all software published in its articles\footnote{\url{https://elifesciences.org/inside-elife/c5428dc9/elife-latest-our-commitment-to-software-preservation-and-reuse }}, and released the \texttt{biblatex-software} package\footnote{\url{https://ctan.org/pkg/biblatex-software }} that allows to properly cite software in research articles written using LaTeX, even down to the line of code\cite{dicosmo2020}.
+Source code deposit in Software Heritage can be manually triggered in a 2 step process or can be performed through the HAL portal\cite{barborini2018}. In 2020, Software Heritage teamed up with the open-access journal eLife to archive all software published in its articles\footnote{\url{https://elifesciences.org/inside-elife/c5428dc9/elife-latest-our-commitment-to-software-preservation-and-reuse }}, and released the \texttt{biblatex-software} package\cite{biblatex-software} that allows to properly cite software in research articles written using LaTeX, even down to the line of code\cite{dicosmo2020}.
 
 As demonstrated in the EOSC report on Scholarly Infrastructures for Research Software (SIRS)\cite{SIRSReport2020}, Software Heritage provides the necessary infrastructure for archiving and referencing all the source code, by building an universal archive with the SWHID \textit{persistent intrinsic identifiers} for over 20 billion artefacts. The scholarly ecosystem, that involves institutional repositories, publishers and aggregators, needs to build upon Software Heritage, by providing qualified descriptions stored in proper metadata and credit to the authors of the software. This will fulfil the key needs that the EOSC Task force has identified as the equivalent of FAIR for research software: archive, reference, description and credit (ARDC). 
 
@@ -120,7 +151,6 @@ With a code repository url, anyone can trigger a save request to the Software He
 Software Heritage is an international project to archive source code of all software. The bioinformatics community has a long tradition of scientific software development. As other fields in science, bioinformatics tackles the issue of reproducibility with the help of open science. Open access publications and open data are key in this effort. Yet without open source software and the long-term preservation of source code proposed by Software Heritage many computational biology experiments that are described in research articles can’t be reproduced. Consequently, we should call for the archival of software source code created in the bioinformatics community and encourage researchers to improve practices of capturing metadata and documenting their source code to ensure its preservation for long-term reproducibility.
 
 
-
-\bibliography{jobim_2021_proceedings_SWH}
+\printbibliography
 
 \end{document}

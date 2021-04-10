@@ -1,0 +1,112 @@
+@software {Apollo11AGCsourcecode,
+  title = {Apollo 11 Guidance Computer (AGC) source code for the command and lunar module},
+  author = {MIT Instrumentation Laboratory},
+  institution = {VirtualAGC project},
+  date = {1967},
+  license = {Public Domain},
+  url = {https://www.ibiblio.org/apollo},
+  repository= {https://github.com/virtualagc/virtualagc},
+}
+
+@codefragment {TurnLEMaround,
+  subtitle = {AGC Luminary routine for changing LEM asset during landing},
+  swhid = {swh:1:cnt:64582b78792cd6c2d67d35da5a11bb80886a6409;origin=https://github.com/virtualagc/virtualagc;anchor=swh:1:rev:007c2b95f301f9438b8b74d7993b7a3b9a66255b;lines=245-261},
+  crossref = {Apollo11AGCsourcecode}
+}
+
+@software {QuakeIIIArena,
+  title = {Quake III Arena},
+  author = {ID Software},
+  date = {1999-2005},
+  license = {GPL},
+  url = {https://archive.softwareheritage.org/badge/origin/https://github.com/id-Software/Quake-III-Arena/},
+}
+
+@codefragment {rsqrt,
+  subtitle = {Inverse of square root routine without floating point operations},
+  swhid = {swh:1:cnt:bb0faf6919fc60636b2696f32ec9b3c2adb247fe;origin=https://github.com/id-Software/Quake-III-Arena;anchor=swh:1:rev:dbe4ddb10315479fc00086f08e25d968b4b43c49;path=/code/game/q_math.c;lines=549-578},
+  crossref = {QuakeIIIArena}
+}
+
+@software {QuakeIIIArena,
+  title = {Quake III Arena},
+  author = {ID Software},
+  date = {1999-2005},
+  license = {GPL},
+  url = {https://archive.softwareheritage.org/badge/origin/https://github.com/id-Software/Quake-III-Arena/},
+}
+
+@software {Gromacs,
+  title = {Gromacs},
+  author = {{University of Groningen, Royal Institute of Technology, Uppsala University}},
+  date = {1991-2021},
+  license = {LGPL},
+  vcs={https://gitlab.com/gromacs/gromacs}
+}
+
+@softwareversion{Gromacsv2021.1,
+  date={01-2021},
+  crossref={Gromacs}
+}
+
+@software {Bowtie2,
+  title = {Bowtie2},
+  author = {Ben Langmead and Salzberg, Steven L},
+  date = {2012-},
+  license = {GPL},
+  url = {http://bowtie-bio.sourceforge.net/bowtie2/index.shtml},
+  vcs={https://github.com/BenLangmead/bowtie2},
+  related = {Langmead2021},
+  relatedstring = "See reference article "
+}
+
+@softwareversion{Bowtie2v242,
+  swhid={swh:1:rel:97bacffeaa6e7c3f574ce5b566daba82aa18a11f;origin=https://github.com/BenLangmead/bowtie2;visit=swh:1:snp:c25778cfefc086c63c6f78eed230d0b9c88876ee},
+  date={10-2022},
+  crossref={Bowtie2}
+}
+
+@article{Langmead2012,
+  doi = {10.1038/nmeth.1923},
+  url = {https://doi.org/10.1038/nmeth.1923},
+  year = {2012},
+  month = mar,
+  publisher = {Springer Science and Business Media {LLC}},
+  volume = {9},
+  number = {4},
+  pages = {357--359},
+  author = {Ben Langmead and Steven L Salzberg},
+  title = {Fast gapped-read alignment with Bowtie 2},
+  journal = {Nature Methods}
+  }
+  
+@software {Cytoscape,
+  title = {Cytoscape},
+  author = {},
+  date = {2003-},
+  license = {LGPL},
+  related = {Shannon2003},
+  vcs={https://github.com/cytoscape},
+  relatedstring = "See reference article "
+  }
+
+@article{Shannon2003,
+  doi = {10.1101/gr.1239303},
+  url = {https://doi.org/10.1101/gr.1239303},
+  year = {2003},
+  month = nov,
+  publisher = {Cold Spring Harbor Laboratory},
+  volume = {13},
+  number = {11},
+  pages = {2498--2504},
+  author = {Paul Shannon and Andrew Markiel and Owen Ozier and Baliga, Nitin S. and Wang, Jonathan T. and Daniel Ramage and Nada Amin and Benno Schwikowski and Trey Ideker},
+  title = {Cytoscape: A Software Environment for Integrated Models of Biomolecular Interaction Networks},
+  journal = {Genome Research}
+}
+
+@software{biblatex-software,
+  title={BibLaTeX stylefiles for software products},
+  author={Di Cosmo, Roberto},
+  year=2020,
+  url={https://ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-software}
+  }	
