@@ -72,23 +72,22 @@ maxbibnames=100]{biblatex}
 \setcounter{footnote}{0}
 
 Reproducibility is an ongoing effort in the bioinformatics community\cite{kim2018}. Open science helps toward this goal with open access to the scientific literature, open data and
-open source (research) software.
-
-In 2018, more than 36\% of yearly published papers were published under open access conditions\cite{trendsopenaccesspublications}. In biology and bioinformatics, the recent development of preprints has acted as a leverage towards open access.
+open source (research) software. In 2018, more than 36\% of yearly published papers were published under open access conditions\cite{trendsopenaccesspublications}. In biology and bioinformatics, the recent development of preprints has acted as a leverage towards open access.
 
 Raw data deposit in public international repositories of genomics and proteomics data is now well established and enforced by most journal editorial policies. Availability of all-purpose data repositories such as Zenodo or Figshare also fostered open data.
 
-However, less attention is paid to scientific software. A common approach is to deposit code in development platforms such as GitHub or GitLab, but no long-term
-sustainability is guaranteed.
+It is now important to establish good practices also for scientific software,
+going beyond the common approach of depositing code in development platforms
+such as GitHub or GitLab, where long-term preservation is not guaranteed.
 
-The Software Heritage (SWH)\footnote{\url{https://www.softwareheritage.org/}} project\cite{dicosmo2017} aims at the long-term archiving of source codes, from the one that ran on the Apollo 11 Guidance Computer to the source code of the molecular dynamics engine Gromacs, the genomics read aligner Bowtie 2, the Cytoscape network visualisation software... Software Heritage also archives smaller programs like scripts, commonly used in bioinformatics.
+This poster aims to present to our community the Software Heritage (SWH)\footnote{\url{https://www.softwareheritage.org/}} archive\cite{dicosmo2017}: it collects, preserves, and make available all source codes, from the one that ran on the Apollo 11 Guidance Computer to the source code of the molecular dynamics engine Gromacs, the genomics read aligner Bowtie 2, the Cytoscape network visualisation software... Software Heritage can also archives smaller programs like the scripts commonly used in bioinformatics.
 
 Software Heritage regularly collects source code from a growing list of code
-hosting platforms, and provides a “Save code now” functionality\footnote{\url{https://archive.softwareheritage.org/save/}} that allows to trigger archival for any
-public repository based on the Git, Mercurial or Subversion version control systems, free of charge. Any object archived in Software Heritage is assigned a persistent identifier called the SWHID\cite{dicosmo2020}.
-The SWHID is an intrinsic identifier, independently verifiable and persistent over time.
+hosting platforms, and provides a powerful “Save code now” functionality\footnote{\url{https://archive.softwareheritage.org/save/}} that allows to trigger archival for any
+public repository based on the Git, Mercurial or Subversion version control systems, free of charge. Any object archived in Software Heritage is assigned an intrinsic persistent identifier\footnote{\url{https://www.softwareheritage.org/2020/07/09/intrinsic-vs-extrinsic-identifiers/}} called the SWHID\cite{dicosmo2020},
+that can be independently verified.
 
-For better referencing and indexing of their source code, we encourage developers and scientists to provide metadata files in the code repository. The proposed metadata files are the following: an AUTHOR(s) file with the list of authors, a LICENSE file with the applicable license to the source code, a README file with the description of the software and other valuable information and a codemeta.json file\footnote{\url{https://codemeta.github.io/}} where structured metadata can be captured in a machine readable format.
+We will present actionable recommendations for better referencing and indexing research source code, including best practices for providing metadata files in the code repository (AUTHOR(s) file with the list of authors, LICENSE file with the applicable license to the source code, README file with the description of the software and other valuable information) and for making it citable\footnote{\url{https://codemeta.github.io/}}, including pointers to appropriate bibliographic styles\cite{dicosmo2020}.
 
 
 \printbibliography
